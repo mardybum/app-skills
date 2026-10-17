@@ -20,11 +20,29 @@ hier nachsehen. Pfade und Kennungen vorher prüfen; sie können sich geändert h
 
 | Für | Vorlage | Pfad |
 |---|---|---|
-| Kinder-App (iOS) | Toni tüftelt + KinderKit (Design, Stimme, Speicher, Eltern-Schranke, Lernpfad) | `~/Leseapp/ToniTueftelt` |
+| Kinder-App (iOS) | Toni tüftelt + KinderKit (Design, Stimme, Speicher, Eltern-Schranke, Lernpfad, Tab-Leiste) | `~/Leseapp/ToniTueftelt` |
 | Kinder-App mit Lesen | Lino liest | `~/Leseapp/LinoLiest` |
 | Werkzeug- und Daten-App (iOS) | Deck Buddy: Swift-Paket mit Modulen, Datenpipeline, Scanner, Konten, Sync | `~/projects/pokedeck` |
 | Habit- und Journal-App (iOS) | askesis: Engine-Paket, Widgets, App Intents, App Group | `~/projects/stoicHabits` |
 | Web-SaaS | Hablamos: Next.js, Supabase-Auth, RLS, Stripe, i18n, CI | `~/projects/hablamos-app` |
+
+### KinderKit einbinden
+
+KinderKit liegt noch als Unterordner in `~/Leseapp/ToniTueftelt/Packages/KinderKit`. SwiftPM kann kein
+Paket aus dem Unterordner eines fremden Repos laden. Ein Pfad wie `../ToniTueftelt/Packages/KinderKit`
+baut nur, wenn beide Repos nebeneinanderliegen; ein frischer Clone oder Xcode Cloud scheitert
+daran (siehe `~/Leseapp/LinoLiest/docs/BACKLOG.md`).
+
+| Modus | Vorgehen |
+|---|---|
+| MVP | lokaler Pfad, in `CLAUDE.md` und als Risiko im Plan festhalten |
+| Production bzw. Graduation | vorher KinderKit in ein eigenes privates Repo umziehen (getaggte Version), Toni und Lino umstellen – laut Backlog „bevor eine dritte Kinder-App entsteht“ |
+
+Leg die Entscheidung dem User im Plan vor. Lino hat Kopien statt KinderKit; das soll nicht wieder passieren.
+
+**Figur und Stimme gehören zur App:** Lino (Eule, Stimme „Lena“) und Toni (Schildkröte, `toni-1`).
+Eine neue App braucht eine bewusste Entscheidung im Plan: eigene Figur und eigene Stimme, oder fürs
+MVP eine vorhandene Stimme mit einer einfachen neuen Figur.
 
 ## Bewährte Skripte zum Kopieren
 

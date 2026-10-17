@@ -2,7 +2,7 @@
 name: app-builder
 description: "Baut eine App von der Idee bis zum Store nach dem bewährten Ablauf aus Lino liest, Toni tüftelt, Deck Buddy, askesis und Hablamos: Briefing, Recherche, Plan, Design, Bauen, User-Review, QA, Launch, Release. Fragt zuerst den Modus ab: MVP (Idee schnell testen), Production (fertig für App Store und echte Nutzer) oder MVP-first (klein starten, dann ausbauen). Nutze diesen Skill immer, wenn jemand eine neue App oder einen Prototyp bauen will, ein MVP in Produktion bringen möchte oder wissen will, wo ein App-Projekt steht – auch bei 'bau mir eine iOS-App für …', 'build an app like X but better', 'reverse engineer X und mach es besser', 'mach daraus ein MVP', 'mach die App store-fertig', selbst wenn das Wort Skill nicht fällt. Einzelne Phasen haben eigene Skills: app-research, app-plan, app-design, app-build, app-qa, app-launch, app-release, app-infra."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # App Builder
@@ -32,13 +32,22 @@ Ergebnis: `docs/BRIEF.md` (Vorlage `templates/BRIEF.md`) und `docs/STATUS.md` (V
 - Frag nur, was fehlt und die Richtung ändert, höchstens vier Fragen auf einmal. Typische Lücken:
   Modus, Plattform, Zielgruppe, Vorbild oder Template-App, Geschäftsmodell und Leitplanken
   (kostenlos? offline? ohne Konto? ohne Tracking?).
-- **Modus empfehlen:** eine neue, unbewiesene Idee → `mvp-first`. Eine klare Idee mit
-  Launch-Absicht → `production`. Eine reine Machbarkeitsprobe → `mvp`.
-- **Commit-Regel einmal festlegen** und in `STATUS.md` eintragen. Standard: nach jedem grünen
-  Meilenstein committen und ins private GitHub-Repo pushen. In früheren Projekten wurde ständig
-  „commit?“ gefragt und immer mit Ja beantwortet. Das kostet nur Zeit.
+- **Modus:** Was der User sagt, zählt.
+  - „erstmal MVP“ oder „zum Testen“ → `mvp-first`, denn „erstmal“ heißt, dass es weitergehen soll
+  - „nur ausprobieren, ob das geht“ → `mvp`
+  - „launchen“ oder „für den App Store“ → `production`
+
+  Sagt er nichts dazu, empfiehl `mvp-first` für eine neue, unbewiesene Idee.
+- **Commit-Regel:** Übernimm den Standard und nenne ihn im ersten Bericht, statt zu fragen.
+  Standard: nach jedem grünen Meilenstein committen und ins private GitHub-Repo pushen. In früheren
+  Projekten wurde ständig „commit?“ gefragt und immer mit Ja beantwortet.
+- **Name:** Ein Arbeitstitel reicht. Der echte Name kommt mit Design bzw. Release, inklusive
+  Markenprüfung (siehe Deck Buddy).
+- **Hypothese** (MVP und mvp-first): Das messbare Signal muss jeden Teil der Hypothese prüfen
+  (z. B. ablesen **und** einstellen). Dazu gehören ein Bestehenskriterium und eine
+  Aufnahmebedingung, z. B. „nur Kinder, die den Vortest nicht bestehen“.
 - Gibt es eine ähnliche eigene App, nimm sie als Template (Kinder-Apps: Lino liest bzw. Toni tüftelt
-  mit KinderKit). Steht in `references/house-setup.md`.
+  mit KinderKit). Steht in `references/house-setup.md`, inklusive der Einschränkungen beim Einbinden.
 
 ## Die drei Modi
 
@@ -132,7 +141,17 @@ Die Agenten liegen in `~/.claude/agents/` und prüfen nur. Sie ändern keinen Co
   zusammen, streichst Doppeltes und sortierst nach Schwere.
 - Fixes macht nur die Haupt-Session. So überschreibt niemand fremde Änderungen (das ist bei Toni
   tüftelt mit zwei Sessions im selben Ordner fast passiert).
-- Agenten kosten. Im MVP höchstens `persona-tester`, in Production alle, die die Phase vorsieht.
+- Agenten kosten. Im MVP `persona-tester`, und `domain-expert` nur, wenn die Hypothese fachlich ist
+  (Lern-Apps: Lernt das Kind wirklich?). In Production alle, die die Phase vorsieht. Im MVP
+  recherchierst du selbst, statt `app-researcher` zu starten.
+
+## Probelauf
+
+Soll der Ablauf nur geprüft werden (Testlauf des Skills, Machbarkeitsgespräch):
+- Arbeite in einem Wegwerf-Ordner im Scratchpad, ohne GitHub-Repo.
+- Höre nach dem Plan-Gate auf.
+- Schreib Funde zum Ablauf in eine eigene Datei. Die Verbesserungen gehören nach
+  `~/skills/app-skills`.
 
 ## Graduation: vom MVP zu Production
 

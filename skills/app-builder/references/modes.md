@@ -12,10 +12,18 @@ Abschnitt „Je nach Modus“. Diese Datei ist die Gesamtsicht.
 
 **Hypothese** in `BRIEF.md` als Satz festhalten: *Wir glauben, dass [Zielgruppe] [Ergebnis] erreicht, wenn [Kernablauf]. Wir wissen es, wenn [messbares Signal].*
 
+Das Signal braucht:
+- ein **Bestehenskriterium**
+- eine **Aufnahmebedingung** (wer teilnimmt)
+- einen **Messweg**
+
+Es muss jeden Teil des Ergebnisses prüfen. Im Testlauf mit der Uhr-App prüfte der erste Entwurf
+nur das Ablesen, nicht das Einstellen. Erst der Persona-Review fand das.
+
 | Phase | Im MVP |
 |---|---|
 | Recherche | Top 3 Konkurrenten mit Schwächen; Reverse Engineering nur, wenn das Vorbild der Kern der Idee ist; Spikes nur für das größte Risiko (Datenquelle, Erkennung, Schnittstelle) |
-| Plan | eine Seite: Hypothese, Kernablauf, 2–4 Meilensteine, bewusst weggelassene Teile |
+| Plan | kurz: Hypothese, Kernablauf, M0 + 2–4 Bau-Meilensteine + Nutzertest, bewusst weggelassene Teile. Den Kernablauf aber vollständig: Interaktion, Rückmeldungen, Fehlerfälle, Tipps |
 | Design | House-Style übernehmen oder eine Richtung skizzieren; Tokens trotzdem zentral |
 | Bauen | ein Kernablauf mit echten Inhalten; alles andere weglassen oder fest verdrahten |
 | Daten | lokal (SwiftData oder JSON); Backend nur, wenn es der Kern ist |

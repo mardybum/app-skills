@@ -2,7 +2,7 @@
 name: app-plan
 description: "Plan-Phase für ein App-Projekt: aus Briefing und Analyse einen umsetzbaren Plan mit V1-Umfang, Personas, Kernabläufen, Architektur, Datenmodell und Meilensteinen (jeder mit Definition of Done) machen und ihn von simulierten Nutzern und einem Fachexperten prüfen lassen, bevor gebaut wird. Ergebnis ist docs/PLAN.md mit Freigabe durch den User. Nutze diesen Skill bei 'plan das erstmal', 'denk hart drüber nach', 'was gehört in V1', 'mach einen Umsetzungsplan', bei großen Umbauten an Live-Apps ('geh in den Plan-Modus') oder wenn app-builder Phase 2 erreicht."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # App-Plan
@@ -29,6 +29,18 @@ Ergebnis: `docs/PLAN.md` nach `templates/PLAN.md`.
    (z. B. „Kind ohne Karten → erstes legales Deck: ≤ 6 Taps“). Diese Zahlen prüft später die QA.
 4. **Umfang V1:** Was drin ist, was bewusst nicht drin ist und warum. Im MVP ist die
    „Nicht drin“-Liste länger als die „Drin“-Liste.
+   - **Kernablauf vollständig beschreiben**, auch im MVP:
+     - die Interaktion (was ist ziehbar, in welchem Raster)
+     - die Rückmeldesätze pro Fehlerfall
+     - wann und wie ein Tipp kommt
+     - wie falsche Antwortoptionen entstehen
+
+     Genau diese Details fand der Review im Testlauf lückenhaft.
+   - **Gegenprobe:** Wie könnte man die Aufgabe lösen, *ohne* das Ziel zu lernen?
+     Beispiele: feste Paare auswendig lernen („Frühstück = sieben“), nach Gehör lösen, Tipp abwarten
+     und abmalen (Toni), Pfeile probieren statt planen. Jede Lücke bekommt eine Gegenmaßnahme.
+   - **Figur und Stimme** bei Template-Apps bewusst entscheiden: eigene oder vorhandene
+     (siehe `app-builder/references/house-setup.md`).
 5. **Architektur:**
    - die Logik als eigenes Paket (Engine) ohne UI, mit Tests
    - App-Schichten: Model, Services, Views
@@ -59,8 +71,12 @@ Ergebnis: `docs/PLAN.md` nach `templates/PLAN.md`.
 Starte parallel in einer Nachricht:
 - `persona-tester`: soll `PLAN.md` aus Sicht jeder Persona durchspielen. Wo bricht der Ablauf ab?
   Was fehlt, was ist zu viel? Welche Warnung wäre falsch kalibriert?
-- `domain-expert` (in Production oder bei fachlichem Kern): Stimmen die Regeln, Standards und das
-  pädagogische bzw. fachliche Modell?
+- `domain-expert`: Stimmen die Regeln, Standards und das pädagogische bzw. fachliche Modell?
+  - in Production immer
+  - im MVP dann, wenn die Hypothese fachlich ist (Lern-Apps, Regelwerke)
+
+Gib beiden die Pfade zu BRIEF, ANALYSE und PLAN, die Personas und eine Liste der Fragen, die dich
+selbst unsicher machen. Sie lesen nur und ändern nichts.
 
 Übernimm die berechtigten Funde in den Plan und liste sie in „Was der Review geändert hat“.
 Lehnst du einen Fund ab, schreib einen Satz, warum.
@@ -78,8 +94,8 @@ Wenn schon echte Nutzer da sind (Hablamos):
 
 | | MVP | Production |
 |---|---|---|
-| Länge | eine Seite | vollständig nach Vorlage |
-| Personas | 1–2 | 3 |
-| Meilensteine | 2–4 | so viele wie nötig, jeder ≤ ein halber Tag |
-| Review | `persona-tester` kurz | `persona-tester` + `domain-expert`, optional `/plan-eng-review` |
-| Extra | Hypothese und Test mit Nutzern als letzter Meilenstein | Infrastruktur-Meilenstein (CI, Staging) aus `app-infra` |
+| Länge | kurz, der Kernablauf aber vollständig | vollständig nach Vorlage |
+| Personas | 2 plus die Person, die den Nutzertest leitet | 3 |
+| Meilensteine | M0 + 2–4 Bau-Meilensteine + Nutzertest | so viele wie nötig, jeder ≤ ein halber Tag |
+| Review | `persona-tester`; `domain-expert`, wenn die Hypothese fachlich ist | `persona-tester` + `domain-expert`, optional `/plan-eng-review` |
+| Extra | Nutzertest als letzter Meilenstein: Aufnahme, Vor- und Nachtest, Bestehenskriterium, Messweg | Infrastruktur-Meilenstein (CI, Staging) aus `app-infra` |

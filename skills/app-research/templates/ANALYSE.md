@@ -7,6 +7,7 @@ Stand: <Datum> · Werkzeuge: REA <Version>, öffentliche Quellen
 > Umsetzung mit eigenen Inhalten und eigener Logik. Übernommen wurden nur Ideen.
 
 ## 1. Was REA gezeigt hat
+<Nur mit Vorbild zum Reverse Engineering. Sonst ein Satz, warum es entfällt.>
 
 | Frage | Befund | Evidenz |
 |---|---|---|
@@ -25,18 +26,19 @@ Bewusst nicht untersucht: <…>
 
 ## 4. Andere Apps
 
-| App | Stärke | Übernommen als Idee |
-|---|---|---|
-| | | |
+| App | Stärke | Schwäche (belegt / dünn belegt) | Übernommen als Idee |
+|---|---|---|---|
+| | | | |
 
 ## 5. Fachliche Grundlagen
 <Regeln, Standards, Studien – jeweils mit Link>
 
 ## 6. Machbarkeit
 
-| Risiko | Spike | Ergebnis | Go? |
-|---|---|---|---|
-| <Datenquelle> | <was gemessen> | <Zahlen> | ✅/❌ |
+| Risiko | Art (technisch / Bedienung / Lernwirkung) | Prüfung | Ergebnis | Go? |
+|---|---|---|---|---|
+| <Datenquelle> | technisch | <Spike: was gemessen> | <Zahlen> | ✅/❌ |
+| <Bedienung> | Bedienung | <Prototyp-Meilenstein Mx mit Gerätetest> | offen | – |
 
 ## 7. Leitlinien für „<App-Name>“
 1. <Leitlinie> – weil <Befund>

@@ -2,7 +2,7 @@
 name: app-build
 description: "Bau-Phase für ein App-Projekt: Repo und Projekt aufsetzen (iOS mit XcodeGen und SwiftUI oder Web mit Next.js, Supabase und Vercel), dann Meilenstein für Meilenstein bauen – Logik zuerst als getestetes Paket, Oberfläche auf den Design-Tokens, Selbsttest im Simulator, Commit pro Meilenstein – und danach das Feedback des Users aus seinem eigenen Test einarbeiten. Nutze diesen Skill, wenn jemand sagt 'bau das', 'implementiere', 'GO', 'continue', 'setz das Projekt auf', 'mach weiter mit M3', wenn der User Testfeedback schickt ('Stimme geht gar nicht', 'Live-Scan funktioniert nicht') oder wenn app-builder Phase 4 oder 5 erreicht."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # App bauen
@@ -16,7 +16,9 @@ mit 41 Szenario-Tests oder der Deck-Validator von Deck Buddy wurden nie umgebaut
 
 1. **Plattform-Referenz lesen:** iOS → `references/ios.md`, Web → `references/web.md`.
 2. **Template prüfen:** Gibt es eine eigene App als Vorlage (`app-builder/references/house-setup.md`)?
-   Dann übernimm Struktur, Theme und geteilte Pakete; kopiere keine Inhalte.
+   Dann übernimm Struktur, Theme und geteilte Pakete; kopiere keine Inhalte. **KinderKit** lässt sich
+   aus einem fremden Repo nur per lokalem Pfad einbinden. Halte dich an die Entscheidung im Plan
+   (Abschnitt „KinderKit einbinden“ in house-setup.md) und kopiere die Dateien nie ins neue Repo.
 3. **Repo:** `git init -b main`, `.gitignore`, privates GitHub-Repo
    (`gh repo create mardybum/<name> --private --source . --push`). Gleich am Anfang, nicht am Ende.
 4. **`CLAUDE.md`** nach `templates/CLAUDE.md`: Befehle, Aufbau, Konventionen, Stolperfallen.

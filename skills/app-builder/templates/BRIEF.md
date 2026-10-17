@@ -27,7 +27,13 @@ Stand: <Datum> · Modus: <mvp | production | mvp-first>
 
 ## Hypothese (MVP)
 Wir glauben, dass <Zielgruppe> <Ergebnis> erreicht, wenn <Kernablauf>.
-Wir wissen es, wenn <messbares Signal, z. B. 4 von 5 Kindern lösen Level 1–3 ohne Hilfe>.
+Wir wissen es, wenn <messbares Signal, z. B. 4 von 5 Kindern, die den Vortest nicht bestehen,
+bestehen den Nachtest>.
+
+- Prüft das Signal **jeden** Teil des Ergebnisses (z. B. ablesen und einstellen)?
+- Bestehenskriterium: <z. B. 5 von 6 richtig>
+- Aufnahme: <wer teilnimmt, z. B. nur, wer den Vortest nicht besteht>
+- Messweg: <ohne App, z. B. Papieruhr; mit App, z. B. Fehlerzähler im Elternbereich>
 
 ## Template
 <Eigene App als Vorlage, z. B. Toni tüftelt + KinderKit – oder keine.>
