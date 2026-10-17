@@ -1,0 +1,51 @@
+# GitHub Actions für eine iOS-App mit XcodeGen. Als .github/workflows/ci.yml ablegen.
+# Platzhalter ersetzen: __APP__ (Projekt und Schema), __KIT__ (reines Swift-Paket, sonst Schritt löschen).
+# Hinweis: macOS-Minuten zählen im Free-Plan zehnfach. Für private Repos ist Xcode Cloud meist günstiger.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Projekt erzeugen
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      # Nur für Pakete ohne UIKit/SwiftUI (z. B. eine reine Engine). UI-Pakete testet das App-Schema.
+      - name: Paket-Tests
+        run: swift test --package-path Packages/__KIT__
+
+      - name: Unit-Tests (iPhone)
+        run: |
+          set -o pipefail
+          xcrun simctl list devices available | grep -E "iPhone|iPad" | head -5
+          xcodebuild test \
+            -project __APP__.xcodeproj -scheme __APP__ \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -skip-testing:__APP__UITests \
+            CODE_SIGNING_ALLOWED=NO | tail -80
+
+      # UI-Tests dauern länger. Bei Bedarf nur auf main laufen lassen.
+      - name: UI-Tests (iPhone)
+        if: github.event_name == 'push'
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project __APP__.xcodeproj -scheme __APP__ \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -only-testing:__APP__UITests \
+            CODE_SIGNING_ALLOWED=NO | tail -80

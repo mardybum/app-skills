@@ -1,0 +1,19 @@
+# Als .github/dependabot.yml ablegen. Nicht zutreffende Blöcke löschen.
+# swift wirkt nur auf Package.swift-Pakete (z. B. Packages/<Kit>), nicht auf Pakete in project.yml.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "swift"
+    directory: "/Packages/__KIT__"
+    schedule:
+      interval: "weekly"
