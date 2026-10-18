@@ -19,6 +19,8 @@ in den genannten Dateien. Lies sie, bevor du einen Stil übernimmst.
 - **Figuren:** ein Maskottchen aus SwiftUI-Formen (Lino, lila Eule; Toni, Schildkröte) mit
   Jubel-, Denk- und Schlaf-Gesicht und Sprechblase
 - **Regeln:** Fehler nie rot, Touch-Ziele ≥ 56 pt, jede Welt hat ihre Farbe, Eltern-Schranke vor Einstellungen und Links
+- **Kontrast beachten:** Weiß auf Himmel (`#3A86CF`, 3,8 : 1) und auf Grün (`#2B9A7B`, 3,5 : 1)
+  reicht nur für große, fette Schrift (ab 19 px fett). Kleine Texte in der `deep`- bzw. `lip`-Farbe.
 - **Passt für:** Vorschule bis Grundschule, Lernen, Familie
 
 ## Stoa – Editorial, Fokus, Gewohnheiten
@@ -54,3 +56,15 @@ in den genannten Dateien. Lies sie, bevor du einen Stil übernimmst.
 
 Passt keiner der Stile, entwirf drei neue Richtungen nach `SKILL.md`. Einer der House-Styles
 darf als Vergleich daneben stehen, damit der User sieht, was „neu“ bedeutet.
+
+## Kandidaten aus Testläufen
+
+Entworfen, noch nicht gebaut. Wird einer gewählt und gebaut, bekommt er einen eigenen Abschnitt oben.
+Canvas „Uhr-App – Design-Richtungen“: https://claude.ai/artifact/4j4sq3ZZVTaLZX1MnVFhMW
+
+- **Bauklotz:** Papier `#F4F0E8`, Tinte `#1B1B1F`, Blau `#2A5CAA` (Aktion), Gelb `#F2BF2F`
+  (vergangene Zeit), Rot `#D84A2B` (nur Stundenzeiger). Schrift Lexend, flach, Ecken 14–18, keine Figur.
+  Formen als Sprache (● volle, ◐ halbe Stunde). Für Kinder ab 7 und alle, die Cartoon zu babyhaft finden.
+- **Tickhausen:** Papierschnitt-Landschaft, Tageszeit-Farben (Morgen `#CFE6F1`, Abend `#F2B48C`,
+  Nacht `#22305E`), Petrol `#1F6E78` als Aktion, Schrift Baloo 2. Eine Geschichte trägt die Aufgaben.
+  Teuer im Bau, weil jede Szene illustriert werden muss.

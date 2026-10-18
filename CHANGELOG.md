@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-18 – nach dem Design-Testlauf (Uhr-App, Phase 3)
+
+- app-design 1.1.0:
+  - Richtung = Look + Idee + Figurenentscheidung
+  - 4 Artboards pro Richtung (Start, Kernaufgabe auf dem Hauptgerät, Fehler-Rückmeldung, Stil-Blatt)
+  - Gate mit Bauaufwand und einer Empfehlung; kein ungefragtes Prüfen des Canvas
+  - Canvas-Link in STATUS/DESIGN
+- house-styles: Kontrasthinweis Pusteblume, Kandidaten Bauklotz und Tickhausen
+
 ## 2026-10-17 – nach dem ersten Testlauf (Uhr-App, MVP, bis zum Plan)
 
 Protokoll: `docs/testlauf-2026-10-17-uhr-app.md` (15 Funde).

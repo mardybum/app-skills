@@ -18,3 +18,19 @@
 | 14 | 2 | MVP-Plan „eine Seite“ widerspricht „Umsetzung ohne Rückfragen“: Der Review brauchte gerade die Details (Rückmeldesätze, Ablenker, Raster). | „Kurz, aber der Kernablauf vollständig: Interaktion, Rückmeldungen, Fehlerfälle, Tipps.“ |
 | 15 | 2 | Für Lern- und Spiel-Apps fehlt im Plan eine Prüffrage gegen Auswendiglernen bzw. Ausnutzen (feste Paare, nach Gehör lösen). | In app-plan: „Wie könnte man die Aufgabe lösen, ohne das Ziel zu lernen?“ |
 | ✅ | 2 | persona-tester hat wie vorgesehen funktioniert: Format eingehalten, nichts geändert, 10 Funde, davon 4 hoch, alle berechtigt. | – |
+
+## Phase 3 – Design (18.10.2026)
+
+Canvas: https://claude.ai/artifact/4j4sq3ZZVTaLZX1MnVFhMW – drei Richtungen (Pusteblume mit Mo, Bauklotz, Tickhausen) mit je Start, Kernaufgabe auf dem iPad, Rückmeldung, Stil-Blatt.
+
+| # | Fund | Änderung |
+|---|---|---|
+| D1 | MVP-Regel „eine Richtung reicht“ – der User wollte trotzdem drei sehen. | Auf Wunsch drei Richtungen, aber im reduzierten Umfang. |
+| D2 | 5 Screens × 3 Richtungen (+ iPad) = 15+ Artboards; zu viel für eine Wahl. „Zusätzlich ein Tablet-Artboard“ war unklar. | 4 Artboards pro Richtung: Start, Kernaufgabe auf dem Hauptgerät, Fehler-Rückmeldung, Stil-Blatt. Rest beim Verfeinern. |
+| D3 | Das Stil-Blatt pro Richtung machte die Richtung greifbar und ist die Vorlage für DESIGN.md – im Skill fehlte es. | Als 4. Artboard aufgenommen. |
+| D4 | Die stärksten Richtungen verbanden Look **und Idee** aus den Leitlinien (Zeit als Fläche; Uhrzeit verändert die Welt). | „Look plus Idee“ als Regel, Beispiele im Skill. |
+| D5 | Ob es eine Figur gibt, ist Teil der Richtung (Mo / keine / Dorfbewohner); Template-Figuren nicht übernehmen. | Im Skill ergänzt. |
+| D6 | Das Gate braucht pro Richtung den Bauaufwand – im MVP entscheidet er mit (Tickhausen = Illustrationen pro Szene). | Aufwand + eine Empfehlung passend zum Modus. |
+| D7 | Der Design-Typ verbietet ungefragtes Prüfen (Screenshots) des Canvas; der Skill sagte dazu nichts. | Vor dem Gate prüft der User; design-critic nur auf Wunsch. |
+| D8 | Kontrast im House-Style: Weiß auf Himmel 3,8 : 1, auf Grün 3,5 : 1 – nur große fette Schrift. | Hinweis in house-styles.md. |
+| D9 | Wohin mit Canvas-Link und -Dateien? | Dateien im Scratchpad, Link in STATUS.md und DESIGN.md. |

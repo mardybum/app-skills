@@ -2,7 +2,7 @@
 name: app-design
 description: "Design-Phase für Apps und Landingpages: drei klar unterschiedliche Designrichtungen auf einem Design-Canvas entwerfen, den User wählen lassen, verfeinern, als DESIGN.md mit Tokens und Komponenten festschreiben, in den Code übernehmen und gegen Screenshots prüfen. Mit konkreten Regeln gegen den generischen KI-Look (kein 'AI-Orange', keine Emoji-Bedienung, keine Kachel-Raster). Nutze diesen Skill immer, wenn jemand ein neues App-Design, ein Redesign, ein App-Icon, ein Design-System oder 'geiles, cleanes, professionelles' Aussehen will, wenn eine App 'nach KI aussieht', bei 'öffne deinen Designer', 'mach mir drei Vorschläge' oder wenn app-builder Phase 3 erreicht – auch für Landingpages im App-Stil."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # App-Design
@@ -34,30 +34,50 @@ lies auch `references/house-styles.md`; vielleicht passt ein bestehender Stil.
 - Plattformkonventionen: iOS Human Interface Guidelines (Tab-Leiste, Sheets, SF Symbols, Dynamic Type).
 
 ### 2. Drei Richtungen entwerfen
-Jede Richtung ist eine **echte Alternative**, nicht drei Farbvarianten. Pro Richtung:
-- **Name und Leitbild** in einem Satz („Pusteblume – sanft, rund und fröhlich“)
+Jede Richtung ist eine **echte Alternative**: ein Look **plus eine Idee**, nicht drei Farbvarianten.
+Die stärksten Richtungen im Testlauf (Uhr-App) kamen aus den Leitlinien der Analyse:
+- „Zeit als Fläche“: Die vergangenen Minuten werden gelb.
+- „Die Uhrzeit verändert die Welt“: eine Turmuhr im Dorf, Licht und Sonne wandern mit.
+
+Pro Richtung:
+- **Name, Leitbild und Idee** in je einem Satz („Bauklotz – klar, geometrisch; Zeit als Fläche“)
+- **Figur oder keine:** Maskottchen, Dorfbewohner oder reine Grafik. Das ist Teil der Richtung,
+  und eine Template-App bringt ihre eigene Figur mit, die nicht übernommen wird.
 - **Palette:** Neutraltöne für Hintergrund und Text, **eine** Akzentfarbe für Aktionen,
   bei Bedarf Inhaltsfarben (Welten, Kategorien) – mit Hex-Werten
 - **Typografie:** höchstens zwei Familien mit Charakter, passend zum Ton (Beispiele in house-styles.md)
-- **Formensprache:** Radien, Linien statt Schatten oder Schatten statt Linien, Knopfstil, Illustrationen bzw. Maskottchen
-- **Schlüssel-Screens mit echten Inhalten**, keine Platzhaltertexte:
-  1. Start bzw. Übersicht
-  2. Kernaufgabe
-  3. Erfolg und Rückmeldung
-  4. ein leerer Zustand oder ein Fehler
-  5. Einstellungen bzw. Elternbereich
+- **Formensprache:** Radien, Linien statt Schatten oder Schatten statt Linien, Knopfstil, Illustrationen
 
-**Wo:** Wenn das Artifact-Tool da ist, `quickstart` mit `intent: "design"` und die Richtungen als
-Artboards nebeneinander (Reihe A, B, C). Sonst eine lokale HTML-Datei mit drei Spalten in
-Handy-Rahmen, geöffnet im Browser-Pane. Echte Größe: 390 × 844 pt für das iPhone, bei iPad-Apps
-zusätzlich ein Tablet-Artboard.
+**Artboards pro Richtung für die Wahl** (vier reichen; 15 wären zu viel, um zu entscheiden):
+1. **Start** bzw. Übersicht
+2. **Kernaufgabe auf dem Hauptgerät.** Bei Kinder-Apps ist das meist das iPad (1180 × 820 quer), sonst das iPhone (390 × 844).
+3. **Rückmeldung bei einem Fehler.** Dort zeigt sich, ob die Richtung freundlich erklären kann.
+4. **Stil-Blatt:** Palette, Schrift, Knöpfe, 3 Prinzipien. Daraus entsteht später direkt die DESIGN.md.
 
-Im Modus **MVP** reicht eine Richtung oder ein House-Style. Tokens trotzdem zentral anlegen.
+Leere Zustände, Erfolg und Einstellungen folgen erst beim Verfeinern der gewählten Richtung (Schritt 4).
+Inhalte sind echt, keine Platzhaltertexte.
+
+**Wo:** Wenn das Artifact-Tool da ist, `quickstart` mit `intent: "design"` und eine Reihe pro
+Richtung (A, B, C) mit Titelnotiz. Sonst eine lokale HTML-Datei mit Handy-Rahmen im Browser-Pane.
+Die Canvas-Dateien bleiben im Scratchpad. Den Link zum Canvas trägst du in `STATUS.md` und
+später in `DESIGN.md` ein.
+
+Im Modus **MVP** reicht eine Richtung oder ein House-Style. Will der User trotzdem Vorschläge
+sehen, entwirf drei Richtungen mit genau diesen vier Artboards. Tokens immer zentral anlegen.
 
 ### 3. Der User wählt (Gate)
-Zeige die drei Richtungen mit je einem Satz, warum sie zur Zielgruppe passt, und deiner
-Empfehlung. Der User darf mischen („A, aber mit den Knöpfen aus C“). Baue nichts ein, bevor er
-gewählt hat. Bei Vorschlägen ohne Einbau gilt: „nicht committen, nicht pushen“.
+Zeige ihm pro Richtung:
+- die Idee
+- warum sie zur Zielgruppe passt
+- was sie im Bau kostet: House-Style mit KinderKit ist schnell; Illustrationen pro Uhrzeit oder Szene sind teuer
+
+Dazu **eine** Empfehlung passend zum Modus (im MVP zählt der Aufwand). Er darf mischen
+(„A, aber mit der Fläche aus B“). Baue nichts ein, bevor er gewählt hat. Bei Vorschlägen ohne
+Einbau gilt: „nicht committen, nicht pushen“.
+
+Vor dem Gate prüft der User selbst. Mach keine eigenen Screenshot-Prüfungen des Canvas, denn der
+Design-Typ verbietet ungefragtes Prüfen. Biete `design-critic` an, wenn der User eine zweite
+Meinung will.
 
 ### 4. Verfeinern
 Die gewählte Richtung bekommt alle Zustände:
@@ -106,7 +126,7 @@ Sie ist die Quelle der Wahrheit für jede spätere Session. Nach `templates/DESI
 
 | | MVP | Production |
 |---|---|---|
-| Richtungen | 1 oder House-Style | 3, Wahl durch den User |
+| Richtungen | 1 oder House-Style; auf Wunsch 3 × 4 Artboards | 3 × 4 Artboards, Wahl durch den User |
 | Zustände | Kernablauf | alle, inkl. Dunkelmodus, große Schrift, iPad |
 | DESIGN.md | kurz: Leitbild, Tokens | vollständig |
 | Review | eigener Screenshot-Vergleich | `design-critic`, `/design-review` für Web |
