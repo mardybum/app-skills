@@ -2,7 +2,7 @@
 name: app
 description: "Build an app from idea to App Store with a proven flow: brief, research, plan, design, build, user review – then hand over to app-qa and app-ship. Three modes: mvp (test an idea fast), mvp-first (start small, graduate later) and production (ready for real users and the store). Use it whenever someone wants to build a new app or prototype, resume an app project ('where are we?', 'continue'), switch from MVP to production, or says things like 'build me an iOS app for…', 'reverse engineer X and make it better', 'bau mir eine App', even if they never mention a skill."
 metadata:
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # App
@@ -141,6 +141,8 @@ and ask once.
 
 ## Rules
 - **Always ask before:** plan, design direction, public texts, production changes (database, live deploy), money or accounts, store submission, deleting.
+- **Do it yourself:** run commands, renders, uploads and deploys yourself. Never end with "run this
+  command". The user only does what needs their account: passwords, clicks in App Store Connect, payments.
 - **Never type** passwords, keys or payment data. The user sets secrets (`supabase secrets set`,
   Vercel env, `.env.local`). If a key shows up in chat: use it, never commit it, and tell the user to rotate it.
 - **Agents only review and report.** Only this session edits files. Start independent reviews in

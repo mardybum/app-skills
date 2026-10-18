@@ -2,7 +2,7 @@
 name: app-ship
 description: "Ship an app: landing page in the app's design on Vercel (imprint, privacy, help), launch waitlist with double opt-in, app video and reels from the simulator, store screenshots; App Store release with a rejection-risk sweep, every App Store Connect field prepared and step-by-step guidance through upload, TestFlight and submission; plus infrastructure by mode (CI/CD, staging, secrets, monitoring, backups) and the MVP-to-production graduation checklist, with an audit script. Use it for 'build a landing page', 'deploy to Vercel', 'add a waitlist', 'make reels', 'get ready for the App Store', 'guide me through App Store Connect', 'what infrastructure is missing', 'set up CI/CD', or when /app reaches the ship step or graduation."
 metadata:
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # App ship

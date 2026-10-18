@@ -41,7 +41,8 @@ Each item cost real time once. Read before building and before shipping.
 - **Pick the store primary language and the app default language together.**
 - **Screenshots in 6.9″ and 6.3″** (plus 13″ for iPad apps).
 - **Check access to the Apple ID mail address before the first upload.**
-- **Vercel may be blocked in the sandbox.** Then give the user the exact command for their terminal.
+- **Vercel may be blocked in the sandbox.** Run the deploy yourself outside the sandbox. The user wants
+  things done, not commands handed over. Only if that is truly impossible, explain why and show the command.
 - **The first `vercel deploy` of a new project without Git goes straight to production** (`<project>.vercel.app`),
   even without `--prod` (Lernbande, 2026-10-18).
   - If the user wants to review texts first: show the site locally only, or deploy a placeholder page first.

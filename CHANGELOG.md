@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1 – 2026-10-18
+- app, app-ship: run commands and deploys yourself, never hand them to the user (user feedback).
+
 ## 2.0.0 – 2026-10-18
 - Restructured into four skills, down from nine:
   - `app`: brief, research, plan, build, review, modes, graduation

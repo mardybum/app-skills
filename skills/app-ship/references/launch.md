@@ -33,7 +33,7 @@
 - [ ] form: success, error, duplicate, honeypot
 
 **Deploy:** `vercel deploy --prod` in `website/`.
-- If Vercel is blocked in the sandbox, give the user the exact command.
+- If Vercel is blocked in the sandbox, run it yourself outside the sandbox. Don't hand it to the user.
 - Afterwards put the URLs into the store metadata.
 - A launch switch (`APP_STORE_URL`) turns on the store links and turns off the form on launch day.
 
