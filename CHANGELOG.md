@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-18 – Moduswechsel
+
+- app-builder 1.2.0: Graduation gilt für mvp und mvp-first und lässt sich jederzeit per Satz auslösen
+  („auf Production umstellen“); ohne Nutzertest eine Rückfrage; nie still in STATUS.md umstellen
+- README: Abschnitt „Modus wechseln“ und Startbeispiele
+
 ## 2026-10-18 – nach Verfeinern und Design-Review (Uhr-App)
 
 - app-design 1.2.0:

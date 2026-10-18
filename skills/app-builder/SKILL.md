@@ -1,8 +1,8 @@
 ---
 name: app-builder
-description: "Baut eine App von der Idee bis zum Store nach dem bewährten Ablauf aus Lino liest, Toni tüftelt, Deck Buddy, askesis und Hablamos: Briefing, Recherche, Plan, Design, Bauen, User-Review, QA, Launch, Release. Fragt zuerst den Modus ab: MVP (Idee schnell testen), Production (fertig für App Store und echte Nutzer) oder MVP-first (klein starten, dann ausbauen). Nutze diesen Skill immer, wenn jemand eine neue App oder einen Prototyp bauen will, ein MVP in Produktion bringen möchte oder wissen will, wo ein App-Projekt steht – auch bei 'bau mir eine iOS-App für …', 'build an app like X but better', 'reverse engineer X und mach es besser', 'mach daraus ein MVP', 'mach die App store-fertig', selbst wenn das Wort Skill nicht fällt. Einzelne Phasen haben eigene Skills: app-research, app-plan, app-design, app-build, app-qa, app-launch, app-release, app-infra."
+description: "Baut eine App von der Idee bis zum Store nach dem bewährten Ablauf aus Lino liest, Toni tüftelt, Deck Buddy, askesis und Hablamos: Briefing, Recherche, Plan, Design, Bauen, User-Review, QA, Launch, Release. Fragt zuerst den Modus ab: MVP (Idee schnell testen), Production (fertig für App Store und echte Nutzer) oder MVP-first (klein starten, dann ausbauen). Nutze diesen Skill immer, wenn jemand eine neue App oder einen Prototyp bauen will, ein MVP in Produktion bringen möchte oder wissen will, wo ein App-Projekt steht – auch bei 'bau mir eine iOS-App für …', 'build an app like X but better', 'reverse engineer X und mach es besser', 'mach daraus ein MVP', 'mach die App store-fertig', 'stell von MVP auf Production um', selbst wenn das Wort Skill nicht fällt. Einzelne Phasen haben eigene Skills: app-research, app-plan, app-design, app-build, app-qa, app-launch, app-release, app-infra."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # App Builder
@@ -155,7 +155,14 @@ Soll der Ablauf nur geprüft werden (Testlauf des Skills, Machbarkeitsgespräch)
 
 ## Graduation: vom MVP zu Production
 
-Gilt im Modus `mvp-first`, sobald das MVP getestet ist:
+Der Wechsel geht in den Modi `mvp` und `mvp-first`, und zwar jederzeit, sobald der User es sagt.
+Typische Formulierungen: „auf Production umstellen“, „Modus Production“, „wir bauen aus“,
+„mach daraus eine richtige App“, „Graduation“. Im Modus `mvp-first` schlägst du den Wechsel
+außerdem selbst vor, sobald der Nutzertest ausgewertet ist.
+
+Fehlt der Nutzertest noch, sag in einem Satz, dass die Hypothese ungeprüft ist, und frag einmal,
+ob trotzdem gewechselt werden soll. Ändere den Modus nie still in `STATUS.md`, ohne die Schritte
+unten zu gehen: Sonst fehlen später CI, Staging, Design-Vollrunde und QA.
 
 1. Fass das Ergebnis des Nutzertests zusammen: was funktioniert hat, was nicht, was überrascht hat.
 2. Der User entscheidet: **ausbauen**, **umbauen** (zurück zu Phase 2) oder **stoppen**.

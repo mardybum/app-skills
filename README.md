@@ -71,6 +71,29 @@ Mehrere Lehrer mit eigenem Login, Klassen per Code, Next.js + Supabase wie Habla
 /app-builder Der Nutzertest ist durch: 4 von 5 Kindern haben bestanden. Wir bauen aus – Graduation.
 ```
 
+### Modus wechseln: von MVP zu Production
+
+Der Modus steht im App-Projekt in `docs/STATUS.md`. Ändere ihn nicht von Hand. Sag es dem Skill:
+
+```
+/app-builder Stell die Uhr-App von MVP auf Production um.
+```
+```
+/app-builder Der Nutzertest ist durch: 4 von 5 Kindern haben bestanden. Wir bauen aus.
+```
+
+Dann läuft die **Graduation**:
+1. Ergebnis des Nutzertests zusammenfassen. Fehlt der Test, fragt der Skill einmal, ob trotzdem gewechselt wird.
+2. Du entscheidest: ausbauen, umbauen oder stoppen.
+3. Die Checkliste `app-infra/references/graduation.md`: CI, Lint, Secret-Scan, Staging, Backups, Monitoring.
+4. Volle Design-Runde, falls das MVP nur einen House-Style hatte.
+5. `PLAN.md` wird auf V1 erweitert.
+6. Danach laufen Bauen, QA, Launch und Release im Production-Standard.
+7. Erst dann steht in `STATUS.md` `Modus: production` mit Datum.
+
+Von Hand umgestellt würden genau diese Schritte fehlen. Zurück geht es genauso:
+„Mach das als MVP weiter, erstmal ohne Store.“
+
 ### Einzelne Phasen in einem bestehenden Projekt
 
 | Ziel | Beispiel |
