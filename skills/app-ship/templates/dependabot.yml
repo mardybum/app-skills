@@ -1,0 +1,19 @@
+# Save as .github/dependabot.yml and delete blocks that don't apply.
+# "swift" only covers Package.swift packages (e.g. Packages/<Kit>), not packages listed in project.yml.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "swift"
+    directory: "/Packages/__KIT__"
+    schedule:
+      interval: "weekly"

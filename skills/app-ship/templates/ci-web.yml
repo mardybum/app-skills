@@ -1,0 +1,44 @@
+# GitHub Actions for Next.js + Supabase + Vercel (from Hablamos). Save as .github/workflows/ci.yml.
+# Repo secret: VERCEL_DEPLOY_HOOK (Vercel → Project → Settings → Git → Deploy Hooks).
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Tests
+        run: npx vitest run
+      - name: Build
+        run: npm run build
+      - name: Security audit
+        run: npm audit --audit-level=critical
+
+  deploy:
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy
+        env:
+          DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: curl -fsS -X POST "$DEPLOY_HOOK"

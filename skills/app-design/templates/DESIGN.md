@@ -1,80 +1,56 @@
-# <App-Name> – Design-System „<Name der Richtung>“
+# <App name> – design system "<direction name>"
 
-Leitbild: **<drei Adjektive>.** <Zwei Sätze, wie sich die App anfühlt und was sie bewusst nicht ist.>
+Mood: **<three adjectives>.** <Two sentences: how the app feels and what it deliberately is not.>
 
-Entwürfe: Design-Canvas „<Titel>“, Reihe <A/B/C> (<Liste der Artboards>).
+Canvas: "<title>", row <A/B/C> (<artboards>) – <link>
 
-## Prinzipien
+## Principles
+1. **<principle>.** <what it means, testable>
 
-1. **<Prinzip>.** <Was das konkret heißt, prüfbar.>
-2. …
+## Colours
+Dark mode: <yes / deliberately not in MVP>
 
-## Farben
-
-| Token | Hell | Dunkel | Verwendung |
+| Token | Light | Dark | Role (one meaning per colour) |
 |---|---|---|---|
-| `background` | #… | #… | Seitenhintergrund |
-| `surface` | #… | #… | Karten, Sheets |
-| `text` | #… | #… | Titel und Text |
-| `textSecondary` | #… | #… | Untertitel, Labels |
-| `hairline` | #… | #… | Trennlinien |
-| `accent` | #… | #… | Hauptaktion (eine pro Screen) |
-| `success` / `warning` / `error` | | | Status – nur für echte Zustände |
+| `background` | #… | #… | page |
+| `surface` | #… | #… | cards, sheets |
+| `text` / `textSecondary` | #… | #… | text (AA checked) |
+| `accent` | #… | #… | main action, one per screen |
+| `success` / `warning` / `error` | | | real states only |
 
-Inhaltsfarben (nur für Inhalte, nie für Bedienung): <…>
-
-## Typografie
-
-| Rolle | Schrift | Größe / Gewicht |
+## Type
+| Role | Typeface | Size / weight |
 |---|---|---|
-| Display | | |
-| Titel | | |
-| Text | | |
-| Label | | |
-| Zahlen | | tabellarisch |
+| display · title · body · label · numbers | | |
 
-Lizenzen: <OFL-Dateien unter …>
+Licences: <OFL files in …>
 
-## Raum und Formen
+## Space and shape
+Grid 8 pt · margins <…> · touch targets ≥ <44/56> pt · radii <chips · buttons · cards> · depth <shadows / hairlines>
 
-- Raster: 8 pt · Ränder: <…> · Touch-Ziele: ≥ <44/56> pt
-- Radien: <Chips · Knöpfe · Karten · Flächen>
-- Tiefe: <Schatten nur unter Flächen / Haarlinien>
+## Motion
+Transitions ≤ 300 ms · celebrations <…> · Reduce Motion: <what happens>
 
-## Bewegung
+## Core component in detail
+<The element the app revolves around (clock, card, habit ring): parts, sizes, colours, states, interaction.>
 
-- Übergänge ≤ 300 ms; Feiern: <…>; „Bewegung reduzieren“: <was dann passiert>
-
-## Kernkomponente im Detail
-
-<Das eine Element, um das sich die App dreht (Lernuhr, Karte, Habit-Ring), maßstäblich:
-Teile, Größen, Farben, Zustände, Interaktion. Bei der Uhr-App: Ring, Zeit-Fläche, Zeiger, Griffe, Zahlen über den Zeigern.>
-
-## Komponenten
-
-| Name im Code | Zweck | Zustände |
+## Components
+| Name in code | Purpose | States |
 |---|---|---|
-| `PrimaryButtonStyle` | Hauptaktion | normal, gedrückt, deaktiviert |
-| … | | |
+| `PrimaryButtonStyle` | main action | normal, pressed, disabled |
 
-## Ton
+## Tone
+<how the app talks – right and wrong example>
 
-<Wie die App spricht. Beispiele: Richtig / Falsch.>
-
-## Do & Don't
-
+## Do and don't
 | Do | Don't |
 |---|---|
-| | |
 
-## iPad und große Schrift
+## iPad and large text
+<how layouts grow; what stacks from which size>
 
-<Wie Layouts wachsen; was ab welcher Größe einspaltig wird.>
+## What the review changed
+<date, agent, number of findings; adopted; not adopted and why>
 
-## Was der Design-Review geändert hat
-
-<Datum, Agent bzw. Werkzeug, Anzahl Funde; übernommene Änderungen; was bewusst nicht und warum.>
-
-## App-Icon
-
-<Motiv, Farben, Datei, Render-Skript>
+## App icon
+<motif, colours, file, render script>

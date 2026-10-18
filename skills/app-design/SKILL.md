@@ -1,155 +1,95 @@
 ---
 name: app-design
-description: "Design-Phase für Apps und Landingpages: drei klar unterschiedliche Designrichtungen auf einem Design-Canvas entwerfen, den User wählen lassen, verfeinern, als DESIGN.md mit Tokens und Komponenten festschreiben, in den Code übernehmen und gegen Screenshots prüfen. Mit konkreten Regeln gegen den generischen KI-Look (kein 'AI-Orange', keine Emoji-Bedienung, keine Kachel-Raster). Nutze diesen Skill immer, wenn jemand ein neues App-Design, ein Redesign, ein App-Icon, ein Design-System oder 'geiles, cleanes, professionelles' Aussehen will, wenn eine App 'nach KI aussieht', bei 'öffne deinen Designer', 'mach mir drei Vorschläge' oder wenn app-builder Phase 3 erreicht – auch für Landingpages im App-Stil."
+description: "Design for apps and landing pages: three genuinely different directions on a design canvas, the user picks, then refine, write DESIGN.md with tokens and components, review with the design-critic agent and move the tokens into code. Includes concrete rules against the generic AI look (no 'AI orange', no emoji controls, no tile grids). Use it whenever someone wants a new app design, a redesign, an app icon or a design system, says an app 'looks like AI', asks to 'make three proposals' or 'open your designer', or when /app reaches the design step – also for landing pages in the app's style."
 metadata:
-  version: 1.2.0
+  version: 2.0.0
 ---
 
-# App-Design
+# App design
 
-Ziel: ein eigenständiger, hochwertiger Look mit klarer Haltung, der zur Zielgruppe passt und
-sich durch die ganze App zieht. Was bisher funktioniert hat:
-- **Lino liest:** drei Richtungen, der User wählte „Pusteblume“ (sanft, rund, fröhlich)
-- **askesis:** schwarz-weiß editorial wie ein Journal
-- **Deck Buddy:** Navy auf ruhigen Flächen mit großen Kennzahlen
+Goal: an own, high-quality look with a clear attitude that fits the audience and runs through the
+whole app. What worked before:
+- **Lino liest:** three directions; the user picked "Pusteblume" (soft, round, cheerful).
+- **askesis:** editorial black and white.
+- **Deck Buddy:** navy on calm surfaces with big key numbers.
 
-Was nicht funktioniert hat: das typische „AI-Orange“, freie Entwürfe ohne Bezug zur bestehenden
-App, und erst bauen, dann gestalten.
+What failed: "AI orange", free drafts that ignored the existing app, and building first, designing later.
 
-Ergebnis: Design-Canvas mit den Richtungen, `DESIGN.md` im Repo-Root (Vorlage `templates/DESIGN.md`),
-Tokens im Code, geprüfte Screens.
+Read `references/principles.md` first. For kids, editorial or tool apps also read
+`references/house-styles.md`; an existing style may fit.
 
-Lies vor dem Entwerfen `references/principles.md`. Bei Kinder-, Editorial- oder Werkzeug-Apps
-lies auch `references/house-styles.md`; vielleicht passt ein bestehender Stil.
+## 1. Context (without grilling the user)
+- **Audience and tone in three adjectives**, usually already in `BRIEF.md`.
+- **References and anti-references** ("not the typical AI orange").
+- **Redesign:** screenshot the current screens first and build on them. Deck Buddy's user rejected free drafts.
+- **Platform conventions:** iOS HIG (tab bar, sheets, SF Symbols, Dynamic Type).
 
-## Ablauf
+## 2. Three directions
+Each direction is **a look plus an idea**, not three colour variants. The best ideas came from the
+analysis guidelines, for example "time as a filled area" or "the time of day changes the world".
 
-### 1. Kontext klären (ohne den User zu löchern)
-- Zielgruppe und Ton in **drei Adjektiven** (z. B. „sanft, rund, fröhlich“, „ruhig, klar, ernst“).
-  Steht meist schon in BRIEF.md oder der Nachricht des Users.
-- Vorbilder und **Anti-Vorbilder** („nicht dieses typische AI-Orange“, „nicht bunt-plastikhaft“).
-- **Bei einem Redesign zuerst die aktuellen Screens ansehen** (Screenshots im Simulator) und
-  darauf aufbauen. Bei Deck Buddy hat der User freie Entwürfe verworfen und erst den Umbau auf
-  Basis der bestehenden Seiten freigegeben.
-- Plattformkonventionen: iOS Human Interface Guidelines (Tab-Leiste, Sheets, SF Symbols, Dynamic Type).
+Per direction:
+- name, mood and idea in one sentence each
+- a figure or none (mascot, villagers, pure graphics); a template app's figure stays with that app
+- palette: neutrals plus **one** action accent (hex values)
+- at most two typefaces with character
+- shape language: radii, lines or shadows, button style
 
-### 2. Drei Richtungen entwerfen
-Jede Richtung ist eine **echte Alternative**: ein Look **plus eine Idee**, nicht drei Farbvarianten.
-Die stärksten Richtungen im Testlauf (Uhr-App) kamen aus den Leitlinien der Analyse:
-- „Zeit als Fläche“: Die vergangenen Minuten werden gelb.
-- „Die Uhrzeit verändert die Welt“: eine Turmuhr im Dorf, Licht und Sonne wandern mit.
+**Four artboards per direction:**
+1. start screen
+2. core task on the main device (kids apps: iPad 1180 × 820 landscape, otherwise iPhone 390 × 844)
+3. feedback after an error
+4. style sheet (palette, type, buttons, 3 principles)
 
-Pro Richtung:
-- **Name, Leitbild und Idee** in je einem Satz („Bauklotz – klar, geometrisch; Zeit als Fläche“)
-- **Figur oder keine:** Maskottchen, Dorfbewohner oder reine Grafik. Das ist Teil der Richtung,
-  und eine Template-App bringt ihre eigene Figur mit, die nicht übernommen wird.
-- **Palette:** Neutraltöne für Hintergrund und Text, **eine** Akzentfarbe für Aktionen,
-  bei Bedarf Inhaltsfarben (Welten, Kategorien) – mit Hex-Werten
-- **Typografie:** höchstens zwei Familien mit Charakter, passend zum Ton (Beispiele in house-styles.md)
-- **Formensprache:** Radien, Linien statt Schatten oder Schatten statt Linien, Knopfstil, Illustrationen
+Use real content, never placeholders.
 
-**Artboards pro Richtung für die Wahl** (vier reichen; 15 wären zu viel, um zu entscheiden):
-1. **Start** bzw. Übersicht
-2. **Kernaufgabe auf dem Hauptgerät.** Bei Kinder-Apps ist das meist das iPad (1180 × 820 quer), sonst das iPhone (390 × 844).
-3. **Rückmeldung bei einem Fehler.** Dort zeigt sich, ob die Richtung freundlich erklären kann.
-4. **Stil-Blatt:** Palette, Schrift, Knöpfe, 3 Prinzipien. Daraus entsteht später direkt die DESIGN.md.
+**Where:** with the Artifact tool, run `quickstart` with `intent: "design"`, one row per direction.
+Otherwise a local HTML file in the browser pane. Put the canvas link into `STATUS.md`.
 
-Leere Zustände, Erfolg und Einstellungen folgen erst beim Verfeinern der gewählten Richtung (Schritt 4).
-Inhalte sind echt, keine Platzhaltertexte.
+**MVP:** one direction or a house style is enough. If the user wants proposals anyway, make three with the four artboards each.
 
-**Wo:** Wenn das Artifact-Tool da ist, `quickstart` mit `intent: "design"` und eine Reihe pro
-Richtung (A, B, C) mit Titelnotiz. Sonst eine lokale HTML-Datei mit Handy-Rahmen im Browser-Pane.
-Die Canvas-Dateien bleiben im Scratchpad. Den Link zum Canvas trägst du in `STATUS.md` und
-später in `DESIGN.md` ein.
+## 3. The user picks (gate)
+- For each direction show the idea, why it fits, and the **build cost** (a house style with KinderKit is cheap; illustrating every scene is expensive).
+- Give **one** recommendation that suits the mode. Mixing is allowed ("A with the area from B").
+- Don't build anything before the choice. Don't screenshot-check the canvas yourself; offer `design-critic` if the user wants a second opinion.
+- Directions that were not chosen go to `docs/BACKLOG.md` with the link, why not now, and when.
 
-Im Modus **MVP** reicht eine Richtung oder ein House-Style. Will der User trotzdem Vorschläge
-sehen, entwirf drei Richtungen mit genau diesen vier Artboards. Tokens immer zentral anlegen.
+## 4. Refine
+- **Derive the screens from the core flow in `PLAN.md`.** In the test run that meant intro, both task types, error, hint, success, parent area and a style sheet with states. Put them in a new canvas row.
+- **When mixing, reassign colour roles:** one colour, one meaning. Check the role table before drawing.
+- **States:** pressed, disabled, selected, error, loading, empty, success.
+- **Dark mode:** decide explicitly.
+- **Large text** up to AX, WCAG AA contrast.
+- **iPad** portrait and landscape: grow, never a phone column.
 
-### 3. Der User wählt (Gate)
-Zeige ihm pro Richtung:
-- die Idee
-- warum sie zur Zielgruppe passt
-- was sie im Bau kostet: House-Style mit KinderKit ist schnell; Illustrationen pro Uhrzeit oder Szene sind teuer
+## 5. DESIGN.md
+Use `templates/DESIGN.md`. It is the source of truth for every later session:
+- mood, 5–7 testable principles
+- tokens with hex and role, type scale, spacing, radii, motion
+- the core component in detail (e.g. the learning clock)
+- components named as in code, tone of voice, do and don't
+- what the review changed
 
-Dazu **eine** Empfehlung passend zum Modus (im MVP zählt der Aufwand). Er darf mischen
-(„A, aber mit der Fläche aus B“). Baue nichts ein, bevor er gewählt hat. Bei Vorschlägen ohne
-Einbau gilt: „nicht committen, nicht pushen“.
+## 6. Review
+1. Render screenshots: `bash scripts/render-artboards.sh <canvas-folder> <out-folder> [names]` (headless Chromium, sizes from `canvas.json`).
+2. Copy the out folder as the "before" state.
+3. Run `design-critic` with the screenshot paths, `DESIGN.md`, `references/principles.md` and a word limit.
+   - 9 screens took 20 minutes. In an MVP only on request.
+4. Fix high and medium findings, render again.
+5. `bash scripts/compare.sh <before> <after> <out.png> <names>` gives the user a before/after image.
+6. Landing pages: also run `/design-review` (gstack).
 
-Vor dem Gate prüft der User selbst. Mach keine eigenen Screenshot-Prüfungen des Canvas, denn der
-Design-Typ verbietet ungefragtes Prüfen. Biete `design-critic` an, wenn der User eine zweite
-Meinung will.
+## 7. Into code
+- One source:
+  - `Theme.swift` (adaptive light/dark colours, fonts, radii) or CSS variables
+  - components as styles (`PrimaryButtonStyle`, `.card()`)
+- No colour values in views. Check with `grep -rnE 'Color\(red:|#[0-9A-Fa-f]{6}' <App>/Views`.
+- Build screen by screen and compare each simulator screenshot with its artboard.
+- Ship the fonts inside the app or website, with the OFL licence file.
 
-Nach der Wahl kommen die **nicht gewählten Richtungen in `docs/BACKLOG.md`**: Idee, Canvas-Link,
-warum nicht jetzt, wann wieder, was sich übernehmen lässt. Tickhausen etwa ist ein Kandidat für die
-Graduation.
-
-### 4. Verfeinern
-**Screens aus dem Plan ableiten.** Geh den Kernablauf in `PLAN.md` durch und leg für jeden genannten
-Screen und Zustand ein Artboard in einer neuen Canvas-Reihe an. Im Testlauf waren das:
-- Einführung
-- beide Aufgabentypen, auch „Ablesen“, das im Richtungsvergleich fehlte
-- Fehler-Rückmeldung, Tipp, Runde geschafft
-- Elternbereich
-- Stil-Blatt mit Zuständen
-
-**Beim Mischen die Farbrollen neu verteilen.** Jede Farbe hat genau eine Bedeutung. „A mit der
-gelben Fläche aus B“ ergab vier Kollisionen, weil Gelb in A schon „aktuell“ und „nach Versuchen“
-hieß. Prüfe die Rollen-Tabelle, bevor du Screens baust.
-
-Die gewählte Richtung bekommt alle Zustände:
-- gedrückt, deaktiviert, ausgewählt, Fehler, Laden, leer, Erfolg
-- Dunkelmodus (sofern nicht bewusst ausgeschlossen)
-- große Schrift (Dynamic Type bis AX), Kontrast nach WCAG AA
-- iPad hoch und quer: wachsen statt Handy-Spalte, siehe `kidScale` in KinderKit
-- App-Icon-Skizzen: drei Varianten, auf hellem und dunklem Hintergrund, in 60 px Größe lesbar
-
-### 5. DESIGN.md schreiben
-Sie ist die Quelle der Wahrheit für jede spätere Session. Nach `templates/DESIGN.md`:
-- Leitbild und 5–7 **prüfbare** Prinzipien („Fehler sind nie rot“, „eine kräftige Farbe pro Aktion“)
-- Tokens: Farben (Hex, Rolle), Typo-Skala, Abstände, Radien, Schatten bzw. Linien, Bewegung
-- Komponenten mit Namen, wie sie im Code heißen
-- Ton der Texte
-- Do und Don't, Verweis auf den Canvas
-
-### 6. Tokens in den Code, dann Screens
-- Eine Quelle: `Theme.swift` (Farben als adaptive Light/Dark-Werte, Fonts, Radien) bzw.
-  CSS-Variablen. Komponenten als Styles (`PrimaryButtonStyle`, `.card()`, `surfaceCard`).
-- Keine Farbwerte direkt in Views. Prüfe mit `grep -rnE 'Color\(red:|#[0-9A-Fa-f]{6}' <App>/Views`.
-  Treffer außerhalb der Theme-Datei sind Fehler.
-- Screen für Screen umsetzen. Nach jedem Screen ein Simulator-Screenshot neben dem Artboard;
-  Abweichungen sofort beheben.
-- Schriften liegen in der App bzw. auf der Website selbst gehostet; OFL-Lizenzdatei beilegen.
-
-### 7. Review
-- **Screenshots ohne App:** `scripts/render-artboards.sh <canvas-ordner> <ausgabe> [Namen]` rendert
-  Canvas-Artboards per Headless-Chromium als PNG, in der Größe aus `canvas.json`.
-- **Vorher/Nachher:** `scripts/compare.sh <vorher> <nachher> <ausgabe.png> Namen` baut ein Bild.
-  Den Vorher-Ordner sicherst du, bevor du Funde einarbeitest.
-- **Kosten:** Ein `design-critic`-Lauf über 9 Screens dauerte im Testlauf 20 Minuten. Gib ihm fertige
-  Screenshots und eine Wortgrenze. Im MVP nur auf Wunsch des Users.
-- `design-critic` mit Screenshots in:
-  - hell und dunkel
-  - kleinem iPhone, großem iPhone und iPad
-  - großer Schrift
-
-  Dazu die Pfade zu `DESIGN.md` und zu `references/principles.md`. Der Agent liefert Funde
-  mit Schwere. Du behebst sie und machst neue Screenshots.
-- Landingpages: zusätzlich `/design-review` (gstack). Bei askesis hat das 14 Funde ergeben,
-  jeder wurde einzeln committet.
-- Am Ende zeigst du dem User Vorher/Nachher-Screenshots der wichtigsten Screens.
-
-### 8. App-Icon
-- Aus dem Design-System, ein klares Motiv, kein Text, keine geschützten Figuren oder Logos.
-- 1024 × 1024 **ohne Alphakanal**.
-- Lesbar in 60 px und auf einem bunten Hintergrundbild.
-- Rendern per Skript, damit es reproduzierbar bleibt (siehe `house-setup.md`).
-
-## Je nach Modus
-
-| | MVP | Production |
-|---|---|---|
-| Richtungen | 1 oder House-Style; auf Wunsch 3 × 4 Artboards | 3 × 4 Artboards, Wahl durch den User |
-| Zustände | Kernablauf | alle, inkl. Dunkelmodus, große Schrift, iPad |
-| DESIGN.md | kurz: Leitbild, Tokens | vollständig |
-| Review | eigener Screenshot-Vergleich | `design-critic`, `/design-review` für Web |
-| Icon | Platzhalter in Akzentfarbe | drei Varianten, Wahl durch den User |
+## 8. App icon
+From the design system:
+- one clear motif, no text, no protected figures
+- 1024 × 1024 **without alpha**
+- readable at 60 px
+- rendered by a script

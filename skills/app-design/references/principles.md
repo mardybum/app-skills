@@ -1,73 +1,57 @@
-# Design-Prinzipien und Anti-KI-Look
+# Design principles and the anti-AI look
 
-Diese Regeln entstehen aus den Reviews von Lino liest, askesis und Deck Buddy. Sie gelten für
-Apps und Landingpages. Sie sind kein Geschmacksdiktat: Wenn eine Regel bewusst gebrochen wird,
-steht der Grund in DESIGN.md.
+Learned in the reviews of Lino liest, askesis, Deck Buddy and the clock-app test run. If a rule is
+broken on purpose, `DESIGN.md` says why.
 
-## Woran man generisches KI-Design erkennt – und was stattdessen
+## Signs of generic AI design – and what to do instead
 
-| Muster | Warum es billig wirkt | Stattdessen |
+| Pattern | Why it looks cheap | Instead |
 |---|---|---|
-| Orange-Lila-Verläufe, Neonfarben, „AI-Orange“ als Primärfarbe | sieht aus wie jede generierte App | eine eigene Primärfarbe aus dem Leitbild (Petrol, Navy, Tinte), Rest neutral |
-| Emoji als Bedienelemente (Tab-Leiste, Knöpfe, Ja/Nein) | verspielt, uneinheitlich, je nach System anders | SF Symbols oder eigene Formen; Emoji höchstens als Inhalt (Bildwörter) |
-| Raster aus 3 oder 6 Kacheln mit Icon, Titel und Text | Template-Optik, bricht auf dem Tablet in eine lange Spalte | nummerierte Zeilen mit Haarlinien, echte Screenshots, eine große Aussage pro Abschnitt |
-| Schatten unter allem, 3D-Klötze | unruhig, Text wird unscharf | Schatten nur unter Flächen, nie unter Text; sonst Haarlinien |
-| Alles gleich laut | keine Hierarchie, das Auge findet nichts | **eine** kräftige Farbe pro Screen bzw. Aktion, alles andere ruhig |
-| Platzhalter, Lorem Ipsum, „John Doe“ | wirkt unfertig und lügt über die Dichte | echte Inhalte; für Screenshots ein Seed mit „gelebtem Monat“ |
-| Tote Knöpfe („Bald im App Store“ als schwarzer Button) | sieht klickbar aus und tut nichts | Status als Chip, Knopf erst, wenn er funktioniert |
-| Handy-Spalte in der Mitte des iPads | wirkt wie ein Port | Elemente wachsen (bis 1,3×) oder eigenes Layout mit zwei Spalten |
-| Rote Fehler bei Kindern | wirkt bestrafend | falsche Antwort blass und kurzes Wackeln; Rückmeldung in Sonne oder Minze |
-| Gerade Apostrophe, „1 Blöcke“ | Detailschlamperei | typografische Zeichen (’ „ “ – …), echte Singular- und Pluralformen |
+| orange-purple gradients, neon, "AI orange" as primary | looks like every generated app | own primary from the mood (petrol, navy, ink), rest neutral |
+| emoji as controls | inconsistent, differs per system | SF Symbols or own shapes; emoji only as content |
+| grid of 3 or 6 tiles with icon, title, blurb | template look, breaks into a long column on tablets | numbered rows with hairlines, real screenshots, one statement per section |
+| shadows under everything, 3D blocks | noisy, text gets blurry | shadows only under surfaces, never under text; otherwise hairlines |
+| everything equally loud | no hierarchy | **one** strong colour per screen or action |
+| placeholders, lorem ipsum | looks unfinished, lies about density | real content; a "lived-in" seed for screenshots |
+| dead buttons ("Coming to the App Store") | look tappable, do nothing | status chip; a button only once it works |
+| phone column on iPad | looks like a port | grow (up to 1.3×) or a real two-column layout |
+| red errors for kids | feels like punishment | fade + short wiggle; feedback in a calm colour |
+| one colour with two meanings | the learning signal gets lost | a role table: one colour, one meaning |
+| straight quotes, "1 blocks" | sloppy detail | typographic marks, real plural forms |
 
-## Handwerk
+## Craft
+- **Hierarchy:**
+  - one focus and one main action per screen
+  - key numbers big, with tabular digits
+- **Type:** at most two families, matching the tone:
+  - playful: Fredoka + Andika
+  - editorial: system sans heavy + New York serif
+  - tool: Bricolage Grotesque + Geist
+- **Colour:**
+  - neutral surfaces plus one accent; content colours only for content
+  - status colours checked for AA in light and dark
+  - never mix warm and cool greys
+- **Space:**
+  - 8 pt grid
+  - touch targets ≥ 44 pt (kids ≥ 56 pt), one radius system
+- **Motion:**
+  - UI transitions ≤ 300 ms, scroll reveals ≤ 650 ms
+  - respect Reduce Motion
+  - content never depends on a script to become visible
+- **States:**
+  - empty states invite with an action
+  - errors say what happened and what to do
+  - loading never freezes
+- **Accessibility is design:**
+  - AA contrast (4.5:1 text, 3:1 large text and controls)
+  - stack at large text sizes
+  - hide decoration from VoiceOver
 
-**Hierarchie**
-- Ein Fokus pro Screen, eine Hauptaktion. Wichtige Zahlen groß und als Kennzahl
-  (StatStrip, tabellarische Ziffern), Erklärungen klein darunter.
-- Abschnittslabels klein, in Großbuchstaben mit Laufweite und sekundärer Farbe; Überschriften kräftig.
-
-**Typografie**
-- Höchstens zwei Familien. Charakter nach Ton:
-  - verspielt: Fredoka (Bedienung) + Andika (Lesetext)
-  - editorial: System-Sans heavy + New York Serif für Zitate
-  - Werkzeug: Bricolage Grotesque + Geist / Geist Mono
-- Lesetext nie in Deko-Großbuchstaben. Displaygrößen mit leicht negativer Laufweite.
-- Zahlen tabellarisch (`.monospacedDigit()`), wo sie sich ändern oder untereinanderstehen.
-
-**Farbe**
-- Neutrale Fläche plus eine Akzentfarbe. Inhaltsfarben (Welten, Kategorien, Kartentypen) nur
-  für Inhalte, nie für Bedienung.
-- Status-Farben eigens definieren (legal / unsicher / nicht legal) und in hell und dunkel auf AA prüfen.
-- Warme und kalte Grautöne nicht mischen. askesis hatte genau einen warmen Grauton zwischen kalten.
-
-**Formen und Raum**
-- 8-pt-Raster; großzügige Abstände.
-- Touch-Ziele mindestens 44 pt; bei Kindern 56 pt und Hauptknöpfe 58–60 pt hoch.
-- Ein Radius-System (z. B. Chips 14, Karten 24–28, große Flächen 34–36) statt beliebiger Werte.
-- Knöpfe mit Charakter: Für Kinder Pillen mit dunklerer „Lippe“, die beim Drücken einsinkt. Für
-  Werkzeuge flache Flächen mit klarem Zustand.
-
-**Bewegung**
-- UI-Übergänge ≤ 300 ms. Einblendungen beim Scrollen ≤ 650 ms. Feiern darf länger dauern.
-- „Bewegung reduzieren“ respektieren; Videos dann nicht automatisch starten.
-- Inhalte nie unsichtbar lassen, bis ein Skript läuft (askesis: leerer Hero, wenn JS fehlte).
-
-**Zustände**
-- Leere Zustände sind Einladungen mit einer Aktion, keine leeren Flächen.
-- Fehler erklären, was passiert ist und was man tun kann.
-- Laden: Skelett oder Fortschritt, nie ein eingefrorener Screen.
-
-**Barrierefreiheit gehört zum Design**
-- Kontrast AA (4,5:1 Text, 3:1 große Schrift und Bedienelemente).
-- Bei sehr großer Schrift einspaltig stapeln, statt Wörter Buchstabe für Buchstabe umzubrechen.
-- Dekoratives für VoiceOver ausblenden; Kacheln als ein Satz vorlesen lassen.
-
-## Landingpages
-
-- Hero passt auf einen 1280 × 720-Bildschirm: Überschrift, Unterzeile, Aktion und Produktbild.
-- Das Produkt ist der Star: echte Screenshots in Geräterahmen, ein App-Video mit Kapiteln, eine
-  Live-Demo, wo sie möglich ist (askesis: Halten zum Abhaken; Toni: Mini-Level).
-- Schriften selbst gehostet, keine Anfragen an Google, CSP und Sicherheits-Header.
-- Nav-Links und Sprachumschalter mit 44-px-Trefferfläche.
-- Nichts versprechen, was die App nicht hält. Wenn sich die App ändert, die Texte anpassen
-  („ohne Konto“, „kein Tracking“, „offline“).
+## Landing pages
+- **Hero:** fits a 1280 × 720 screen: headline, subline, action, product image.
+- **The product is the star:** real screenshots in device frames, an app video with chapters, a live demo where possible.
+- **Tech:**
+  - self-hosted fonts, no Google requests
+  - CSP and security headers
+  - 44 px hit areas for nav and the language switch
+- **Copy:** never promise what the app doesn't do ("no account", "no tracking", "offline").

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Git hook against keys and .env files, plus a format check when SwiftFormat is installed.
+# Install:  cp pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+# Emergency skip: git commit --no-verify (then check on purpose!)
+set -uo pipefail
+
+fail=0
+staged="$(git diff --cached --name-only --diff-filter=ACM)"
+
+# 1. No .env files (except .env.example)
+if printf '%s\n' "$staged" | grep -E '(^|/)\.env(\..+)?$' | grep -vE '\.env\.example$' >/dev/null; then
+  echo "❌ .env file in commit. Values belong in secrets; only .env.example goes into the repo."
+  fail=1
+fi
+
+# 2. Typical keys in added lines
+patterns='xkeysib-[A-Za-z0-9-]{20,}|AIza[0-9A-Za-z_-]{35}|sk-ant-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9]{40,}|sk_live_[0-9A-Za-z]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|sb_secret_[A-Za-z0-9_-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----'
+hits="$(git diff --cached -U0 | grep -E '^\+' | grep -Eo "$patterns" || true)"
+if [ -n "$hits" ]; then
+  echo "❌ Possible key in commit (shortened):"
+  printf '%s\n' "$hits" | sed -E 's/^(.{8}).*/  \1…/'
+  echo "   Remove it, set it as a secret, and rotate it if it was ever shared."
+  fail=1
+fi
+
+# 3. gitleaks, if installed (new and old command form)
+if command -v gitleaks >/dev/null 2>&1; then
+  if ! gitleaks git --pre-commit --staged --redact --no-banner >/dev/null 2>&1; then
+    gitleaks protect --staged --redact --no-banner || fail=1
+  fi
+fi
+
+# 4. SwiftFormat, if installed and configured
+swift_files="$(printf '%s\n' "$staged" | grep -E '\.swift$' || true)"
+if [ -n "$swift_files" ] && [ -f .swiftformat ] && command -v swiftformat >/dev/null 2>&1; then
+  # shellcheck disable=SC2086
+  if ! swiftformat --lint $swift_files >/dev/null 2>&1; then
+    echo "❌ SwiftFormat: formatting is off. Run: swiftformat $swift_files"
+    fail=1
+  fi
+fi
+
+exit $fail

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Rendert Artboards eines Design-Canvas (.dc.html) als PNG, z. B. für design-critic oder Vorher/Nachher.
-# Aufruf: bash render-artboards.sh <canvas-ordner-mit-project/> <ausgabe-ordner> [Name ...]
-#   Ohne Namen werden alle Artboards aus project/canvas.json gerendert; Größe aus "w"/"h" im Index.
-# Braucht Google Chrome oder den Headless-Chromium von Playwright (~/Library/Caches/ms-playwright).
+# Renders design-canvas artboards (.dc.html) to PNG, e.g. for design-critic or before/after.
+# Usage: bash render-artboards.sh <canvas-folder-with-project/> <out-folder> [name ...]
+#   Without names every artboard in project/canvas.json is rendered; size comes from "w"/"h" in the index.
+# Needs Google Chrome or Playwright's headless Chromium (~/Library/Caches/ms-playwright).
 set -uo pipefail
 
-root="${1:?Canvas-Ordner fehlt}"; out="${2:?Ausgabe-Ordner fehlt}"; shift 2
+root="${1:?canvas folder missing}"; out="${2:?out folder missing}"; shift 2
 project="$root/project"
-[ -f "$project/canvas.json" ] || { echo "Kein $project/canvas.json"; exit 1; }
+[ -f "$project/canvas.json" ] || { echo "No $project/canvas.json"; exit 1; }
 mkdir -p "$out"
 
 chrome=""
@@ -15,9 +15,9 @@ for c in "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
          $(ls -d "$HOME"/Library/Caches/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-mac-*/chrome-headless-shell 2>/dev/null | sort -r); do
   [ -x "$c" ] && { chrome="$c"; break; }
 done
-[ -n "$chrome" ] || { echo "Kein Chrome/Chromium gefunden (npx playwright install chromium-headless-shell)"; exit 1; }
+[ -n "$chrome" ] || { echo "No Chrome/Chromium found (npx playwright install chromium-headless-shell)"; exit 1; }
 
-# Name und Größe aus dem Index lesen
+# read name and size from the index
 boards="$(python3 -I - "$project/canvas.json" "$@" <<'EOF'
 import json, sys
 index = json.load(open(sys.argv[1]))

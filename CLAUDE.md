@@ -1,15 +1,15 @@
-# App Skills – Regeln für Änderungen
+# App Skills – rules for changes
 
-- Jeder Skill liegt in `skills/<name>/SKILL.md` mit Frontmatter `name` (= Ordnername, kebab-case),
-  `description` (≤ 1024 Zeichen, sagt was und wann, mit typischen Formulierungen des Users) und
-  `metadata.version` (SemVer).
-- SKILL.md bleibt unter 500 Zeilen. Details gehören nach `references/`, Vorlagen nach `templates/`.
-  Jede Datei, die SKILL.md nennt, muss existieren (`./validate.sh` prüft das).
-- Agenten in `agents/<name>.md` mit `name` und `description`. Sie prüfen und berichten, sie ändern
-  keinen Code. So bleibt die Haupt-Session der einzige Schreiber.
-- Sprache: Deutsch, aktiv, kurz. Erkläre das Warum (am besten mit dem Projekt, in dem es gelernt
-  wurde) statt Großbuchstaben-Befehlen.
-- Neue Erfahrungen aus Projekten kommen nach `skills/app-builder/references/lessons.md`. Die
-  passende Phase verweist darauf.
-- Keine Secrets, Kennwörter oder privaten Adressen in diesen Dateien.
-- Nach jeder Änderung `./validate.sh`, dann Version im betroffenen Skill erhöhen und committen.
+- Keep it at **four skills** (`app`, `app-design`, `app-qa`, `app-ship`). New topics go into a
+  skill's `references/` rather than a new skill.
+- Every `skills/<name>/SKILL.md` has frontmatter:
+  - `name` equal to the folder
+  - `description` ≤ 1024 characters: what it does and when, with typical user phrases
+  - `metadata.version` (SemVer)
+- Keep each SKILL.md short (aim under 150 lines). Details go to `references/`, templates to `templates/`.
+  Every file a SKILL.md names must exist (`./validate.sh` checks this).
+- Agents in `agents/<name>.md` only review and report; the main session is the only writer.
+- Everything in English. The skills talk to the user in the user's language.
+- New lessons from projects go to `skills/app/references/lessons.md`.
+- No secrets, passwords or private addresses in these files.
+- After every change: `./validate.sh`, bump the version of the changed skill, add a line to `CHANGELOG.md`, commit.

@@ -1,51 +1,42 @@
-# QA-Bericht – <App-Name>
+# QA report – <App name>
 
-Stand: <Datum> · Commit `<hash>` · getestet auf <Simulatoren/Geräte, frische Installation> <und gegen lokales Supabase>
+Date: <date> · commit `<hash>` · tested on <simulators/devices, fresh install> <and local Supabase>
 
-## Ergebnis
-
-| Bereich | Ergebnis |
+| Area | Result |
 |---|---|
-| Build | <0 Warnungen im eigenen Code> |
-| Tests | <n Tests grün, x % Abdeckung im Kern> |
-| Leistung | <Startzeit, Speicher> |
-| Sicherheit | <keine Geheimnisse in Repo/Historie, RLS x/x> |
-| Sprachen | <n Texte, alle übersetzt> |
-| Barrierefreiheit | <Audits auf n Screens ohne Fehler> |
-| Gefunden und behoben | <n technisch, m Usability, k fachlich> |
-| Offen | <n Empfehlungen> |
-| Nicht geprüft | <z. B. Mikrofon auf echtem Gerät, Test mit echten Kindern> |
+| Build | <0 warnings in own code> |
+| Tests | <n green, x % core coverage> |
+| Performance | <launch time, memory> |
+| Security | <no secrets in repo/history, RLS x/x> |
+| Languages | <n strings, all translated> |
+| Accessibility | <audits on n screens without errors> |
+| Found and fixed | <n technical, m usability, k domain> |
+| Open | <n recommendations> |
+| Not checked | <e.g. microphone on a real device, test with real kids> |
 
-## Technik
+## Technical
+**Checked, fine:** <…>
 
-### Geprüft, in Ordnung
-- <…>
-
-### Gefunden und behoben
-
-| # | Fund | Auswirkung | Behebung |
+| # | Finding | Impact | Fix |
 |---|---|---|---|
-| T1 | | hoch | |
+| T1 | | high | |
 
 ## Usability
+Played through as: <personas>
 
-Durchgespielt in <n> Rollen: <Personas>.
-
-| Ablauf | Taps (Ziel) | Eindruck |
+| Flow | Taps (target) | Impression |
 |---|---|---|
 | | | |
 
-| # | Fund | Auswirkung | Behebung |
+| # | Finding | Impact | Fix |
 |---|---|---|---|
 | U1 | | | |
 
-## Fachlich
+## Domain
+<learning goals / rules, assessment, findings with measures>
 
-<Lernziele/Regeln, Bewertung, Befunde P1 … mit Maßnahmen>
+## Accessibility and devices
+<audits, VoiceOver, Dynamic Type, device matrix>
 
-## Barrierefreiheit und Geräte
-
-<Audits, VoiceOver, Dynamic Type, Gerätematrix>
-
-## Offene Empfehlungen
-1. <…> – <warum, Aufwand>
+## Open recommendations
+1. <…> – <why, effort>
