@@ -45,6 +45,11 @@ Lizenzen: <OFL-Dateien unter …>
 
 - Übergänge ≤ 300 ms; Feiern: <…>; „Bewegung reduzieren“: <was dann passiert>
 
+## Kernkomponente im Detail
+
+<Das eine Element, um das sich die App dreht (Lernuhr, Karte, Habit-Ring), maßstäblich:
+Teile, Größen, Farben, Zustände, Interaktion. Bei der Uhr-App: Ring, Zeit-Fläche, Zeiger, Griffe, Zahlen über den Zeigern.>
+
 ## Komponenten
 
 | Name im Code | Zweck | Zustände |
@@ -65,6 +70,10 @@ Lizenzen: <OFL-Dateien unter …>
 ## iPad und große Schrift
 
 <Wie Layouts wachsen; was ab welcher Größe einspaltig wird.>
+
+## Was der Design-Review geändert hat
+
+<Datum, Agent bzw. Werkzeug, Anzahl Funde; übernommene Änderungen; was bewusst nicht und warum.>
 
 ## App-Icon
 

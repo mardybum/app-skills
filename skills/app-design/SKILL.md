@@ -2,7 +2,7 @@
 name: app-design
 description: "Design-Phase für Apps und Landingpages: drei klar unterschiedliche Designrichtungen auf einem Design-Canvas entwerfen, den User wählen lassen, verfeinern, als DESIGN.md mit Tokens und Komponenten festschreiben, in den Code übernehmen und gegen Screenshots prüfen. Mit konkreten Regeln gegen den generischen KI-Look (kein 'AI-Orange', keine Emoji-Bedienung, keine Kachel-Raster). Nutze diesen Skill immer, wenn jemand ein neues App-Design, ein Redesign, ein App-Icon, ein Design-System oder 'geiles, cleanes, professionelles' Aussehen will, wenn eine App 'nach KI aussieht', bei 'öffne deinen Designer', 'mach mir drei Vorschläge' oder wenn app-builder Phase 3 erreicht – auch für Landingpages im App-Stil."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # App-Design
@@ -79,7 +79,23 @@ Vor dem Gate prüft der User selbst. Mach keine eigenen Screenshot-Prüfungen de
 Design-Typ verbietet ungefragtes Prüfen. Biete `design-critic` an, wenn der User eine zweite
 Meinung will.
 
+Nach der Wahl kommen die **nicht gewählten Richtungen in `docs/BACKLOG.md`**: Idee, Canvas-Link,
+warum nicht jetzt, wann wieder, was sich übernehmen lässt. Tickhausen etwa ist ein Kandidat für die
+Graduation.
+
 ### 4. Verfeinern
+**Screens aus dem Plan ableiten.** Geh den Kernablauf in `PLAN.md` durch und leg für jeden genannten
+Screen und Zustand ein Artboard in einer neuen Canvas-Reihe an. Im Testlauf waren das:
+- Einführung
+- beide Aufgabentypen, auch „Ablesen“, das im Richtungsvergleich fehlte
+- Fehler-Rückmeldung, Tipp, Runde geschafft
+- Elternbereich
+- Stil-Blatt mit Zuständen
+
+**Beim Mischen die Farbrollen neu verteilen.** Jede Farbe hat genau eine Bedeutung. „A mit der
+gelben Fläche aus B“ ergab vier Kollisionen, weil Gelb in A schon „aktuell“ und „nach Versuchen“
+hieß. Prüfe die Rollen-Tabelle, bevor du Screens baust.
+
 Die gewählte Richtung bekommt alle Zustände:
 - gedrückt, deaktiviert, ausgewählt, Fehler, Laden, leer, Erfolg
 - Dunkelmodus (sofern nicht bewusst ausgeschlossen)
@@ -105,6 +121,12 @@ Sie ist die Quelle der Wahrheit für jede spätere Session. Nach `templates/DESI
 - Schriften liegen in der App bzw. auf der Website selbst gehostet; OFL-Lizenzdatei beilegen.
 
 ### 7. Review
+- **Screenshots ohne App:** `scripts/render-artboards.sh <canvas-ordner> <ausgabe> [Namen]` rendert
+  Canvas-Artboards per Headless-Chromium als PNG, in der Größe aus `canvas.json`.
+- **Vorher/Nachher:** `scripts/compare.sh <vorher> <nachher> <ausgabe.png> Namen` baut ein Bild.
+  Den Vorher-Ordner sicherst du, bevor du Funde einarbeitest.
+- **Kosten:** Ein `design-critic`-Lauf über 9 Screens dauerte im Testlauf 20 Minuten. Gib ihm fertige
+  Screenshots und eine Wortgrenze. Im MVP nur auf Wunsch des Users.
 - `design-critic` mit Screenshots in:
   - hell und dunkel
   - kleinem iPhone, großem iPhone und iPad

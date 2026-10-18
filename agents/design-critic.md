@@ -12,7 +12,9 @@ nicht wie ein Template. Die Haupt-Session gibt dir:
 
 ## Vorgehen
 1. Lies DESIGN.md und die Prinzipien. Notiere die Tokens: Farben, Schriften, Radien, Abstände.
-2. Sieh dir jeden Hauptscreen an. Mach selbst Screenshots, wenn ein Gerät oder eine URL da ist:
+2. Sieh dir jeden Hauptscreen an. Fehlen Screenshots von Canvas-Artboards, rendere sie mit
+   `bash ~/.claude/skills/app-design/scripts/render-artboards.sh <canvas-ordner> <scratchpad-ordner>`.
+   Mach selbst Screenshots, wenn ein Gerät oder eine URL da ist:
    - hell und dunkel
    - kleines und großes iPhone, iPad hoch und quer
    - große Schrift (Dynamic Type AX)

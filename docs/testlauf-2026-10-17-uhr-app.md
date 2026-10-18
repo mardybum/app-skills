@@ -34,3 +34,17 @@ Canvas: https://claude.ai/artifact/4j4sq3ZZVTaLZX1MnVFhMW – drei Richtungen (P
 | D7 | Der Design-Typ verbietet ungefragtes Prüfen (Screenshots) des Canvas; der Skill sagte dazu nichts. | Vor dem Gate prüft der User; design-critic nur auf Wunsch. |
 | D8 | Kontrast im House-Style: Weiß auf Himmel 3,8 : 1, auf Grün 3,5 : 1 – nur große fette Schrift. | Hinweis in house-styles.md. |
 | D9 | Wohin mit Canvas-Link und -Dateien? | Dateien im Scratchpad, Link in STATUS.md und DESIGN.md. |
+
+## Phase 3 – Verfeinern und Review (18.10.2026)
+
+Gewählt: A (Pusteblume mit Mo) + gelbe Zeit-Fläche aus B. C kam auf Wunsch des Users in den Backlog. Neue Canvas-Reihe A+ mit 9 Artboards, `DESIGN.md`, Review durch design-critic (15 Funde, 2 hoch), Fixes eingearbeitet, Vorher/Nachher gerendert.
+
+| # | Fund | Änderung |
+|---|---|---|
+| V1 | Für das Verfeinern fehlte eine Liste der Screens. „Ablesen“ (zweiter Aufgabentyp) war im Richtungsvergleich nicht dabei. | Screens aus dem Kernablauf in PLAN.md ableiten. |
+| V2 | Das Mischen zweier Richtungen erzeugte 4 Farbkollisionen (Gelb = Zeit vs. Gelb = aktuell/nach Versuchen). | Beim Mischen Farbrollen neu verteilen, Rollen-Tabelle prüfen. |
+| V3 | design-critic braucht Screenshots; Canvas-Artboards lassen sich per Headless-Chromium rendern – das fehlte als Werkzeug. | `scripts/render-artboards.sh` und `scripts/compare.sh` im Skill, Hinweis im Agenten. |
+| V4 | design-critic: 20 Min., ~150k Tokens für 9 Screens – stark, aber teuer. | Kostenhinweis; fertige Screenshots + Wortgrenze; im MVP nur auf Wunsch. |
+| V5 | Nicht gewählte Richtungen gingen verloren, bis der User „packe C in den Backlog“ sagte. | Automatisch in docs/BACKLOG.md. |
+| V6 | DESIGN.md-Vorlage hatte keinen Platz für die Kernkomponente (Lernuhr) und die Review-Änderungen. | Zwei Abschnitte ergänzt. |
+| ✅ | design-critic: Format eingehalten, nichts geändert, konkrete Fixes mit Kontrastwerten; alle hohen und mittleren Funde berechtigt. | – |

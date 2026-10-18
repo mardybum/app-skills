@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-18 – nach Verfeinern und Design-Review (Uhr-App)
+
+- app-design 1.2.0:
+  - Screens fürs Verfeinern aus dem Plan ableiten
+  - Farbrollen beim Mischen neu verteilen
+  - nicht gewählte Richtungen in den Backlog
+  - Render- und Vergleichsskript, Kostenhinweis für design-critic
+- DESIGN.md-Vorlage: Kernkomponente im Detail, Review-Änderungen
+- design-critic: nutzt render-artboards.sh, wenn Screenshots fehlen
+
 ## 2026-10-18 – nach dem Design-Testlauf (Uhr-App, Phase 3)
 
 - app-design 1.1.0:
